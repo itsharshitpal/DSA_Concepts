@@ -2,11 +2,10 @@ package arrayList;
 
 public class Efficient_MaximumSubArraySum {
     public static int maxSum(int[] arr) {
-        int n = arr.length;
         int maxEnding = arr[0];
         int res = arr[0];
-        for (int i = 0; i < n; i++) {
-            maxEnding = Math.max(maxEnding + arr[i], arr[i]);
+        for (int i : arr) {
+            maxEnding = Math.max(maxEnding + i, i);
             res = Math.max(res, maxEnding);
         }
         return res;
